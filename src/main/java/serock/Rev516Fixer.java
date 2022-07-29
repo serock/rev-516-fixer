@@ -22,7 +22,7 @@ public class Rev516Fixer implements Runnable {
     @Override
     public void run() {
         try (final PDDocument doc = PDDocument.load(getInFile());) {
-            final PDTextField textField = getTextField(doc, "IDENTIFYING NUMBER OF ASSET");
+            final PDTextField textField = getTextField(doc, "ACCOUNT NUMBER");
             if (textField != null) {
                 if (isCapacityIncreased(textField, 20)) {
                     final File outFile = createOutFile();
